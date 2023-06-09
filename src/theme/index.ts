@@ -50,7 +50,7 @@ export const BaseTheme = extendTheme({
     brown: '#c4865a',
     gray: '#bebfbf',
     black: '#2f3030',
-    cream: '#ffd9b3',
+    cream: '#f5e2d1',
   },
   Pressable: {
     cursor: 'pointer',
