@@ -1,21 +1,25 @@
-import { Box, Text, Button, Image } from 'native-base';
-
+import { Box, Text, Button, Image, View, Heading } from 'native-base';
+const charmander = require('../../assets/images/charmander.png');
 export const Home = ({ navigation }) => {
-  const charmander = require('../../assets/charmander.png');
   return (
-    <Box alignItems="center" bgColor="black" height="full">
-      <Text color="yellow">Freddie's Pokedex!!!</Text>
-
-      <Image size={'3xl'} margin={'1.5'} padding={'16'} bgColor="white" src={charmander} />
-      <Button
-        backgroundColor="red"
-        borderRadius="3xl"
-        bottom={0}
-        onPress={() => navigation.navigate('Pokedex')}
-        testID="Open Pokedex"
-      >
-        Open Pokedex
-      </Button>
-    </Box>
+    <View margin-left="auto" bgColor="cream" margin-right="auto" height={'100%'}>
+      <Box alignItems="center" paddingTop={'150'}>
+        <Heading color="black" fontSize={'2xl'}>
+          Freddie's Pokedex!!!
+        </Heading>
+        <Image source={charmander} alt="Alternate Text" resizeMode="contain" size="2xl" />
+        <Button
+          backgroundColor="red"
+          borderRadius="3xl"
+          bottom={0}
+          onPress={() => navigation.navigate('Pokedex')}
+          testID="Open Pokedex"
+          margin={10}
+          padding={5}
+        >
+          Open Pokedex
+        </Button>
+      </Box>
+    </View>
   );
 };
