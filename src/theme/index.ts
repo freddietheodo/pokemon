@@ -1,6 +1,20 @@
 import { extendTheme } from 'native-base';
 
 export const BaseTheme = extendTheme({
+	fontConfig: {
+		Roboto: {
+		  100: {
+			normal: "Roboto-Light",
+			italic: "Roboto-LightItalic",
+		  },
+		},
+	
+	},
+	fonts: {
+		heading: "Roboto",
+		body: "Roboto",
+		mono: "Roboto",
+	  },
 	components: {
 		Text: {
 			defaultProps: {
@@ -26,14 +40,17 @@ export const BaseTheme = extendTheme({
 			50:'#f68809',
 			200: '#d87708',
 		},
-		green: '#0fcd09',
-		red: '#f2660d',
-		blue: '#0d8cf2',
-		yellow: '#feee01',
-		pink: '#ec1390',
-		purple: '#8411ee',
+		green: '#50cf57',
+		red: '#ff5855',
+		blue: '#71b9e5',
+		yellow: '#f9c95a',
+		pink: '#ff8f8d',
+		purple: '#c26aff',
 		white: '#f4e9fd',
-		background: '#ffffff'
+		background: '#f7f7f7',
+		brown: '#c4865a',
+		gray: '#bebfbf',
+		black: '#2f3030',
 	},
 	Pressable: {
 		cursor: 'pointer',

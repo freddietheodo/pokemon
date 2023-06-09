@@ -45,9 +45,9 @@ const fetchSprite = async () => {
   }, []);
 
     if  (colour && pokemon) return(
-          <TouchableOpacity onPress={onPress}>
-              <Box borderRadius='3xl' bg={colour.color.name ?? 'gray.100'} py='40px' margin='10px' flex='wrap' alignItems='center'>
-                  <Image src={pokemon.sprites.front_default} alt='Cant find pokemon' height="100px" width="100px"/>
+          <TouchableOpacity onPress={onPress} testID={item.item.pokemon_species.name}>
+              <Box borderRadius='3xl' bg={colour.color.name ?? 'gray.100'} py='10px' margin='5px' alignItems='center' shadow={4} borderColor="white" borderWidth="2px">
+                  <Image src={pokemon.sprites.front_default} alt='Cant find pokemon' height="80px" width="80px"/>
                   <Center>
                         <Text>{item.item.pokemon_species.name}</Text>
                   </Center>

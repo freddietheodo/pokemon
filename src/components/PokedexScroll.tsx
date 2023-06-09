@@ -1,15 +1,10 @@
-import { StackNavigationProp } from "@react-navigation/stack";
 import React, {
-    JSXElementConstructor,
-    ReactElement,
     useEffect,
     useState,
   } from "react";
-
-import { FlatList } from "react-native-gesture-handler";
+import {  FlatList } from "react-native"
+import { View } from "native-base";
 import { PokedexCell } from "./PokedexCell";
-import { Box, View } from "native-base";
-import { background } from "native-base/lib/typescript/theme/styled-system";
       
       
 export type PokedexProps = {
@@ -45,7 +40,7 @@ export const PokedexScroll = ({ navigation }) => {
     
     const renderItem = (item) => {
         return (
-        <View flexDirection='column' flex={1} margin={1}>
+        <View flexDirection='column' flex='1'>
             <PokedexCell
                 item={item}
                 onPress={() =>

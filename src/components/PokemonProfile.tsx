@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Center, Pressable, Text, Image } from 'native-base';
-import { types } from 'util';
-import { PokedexProps } from './PokedexScroll';
+import { Stats } from './Stats';
+import { Evolutions } from './Evolutions';
+import { Moves } from './Moves';
 
 export type PokemonProps = {
 
@@ -78,7 +79,9 @@ export const PokemonProfile = ({navigation, route}) => {
               <Box flexDir='row'>
                 {data.types.map((item, index)=>{
                   return(
-                  <Text bg={colourTheme.color.name}  color={'background'} p='10px'  margin="15px" borderRadius='3xl'>{item.type.name}</Text>
+                    <Box borderRadius='3xl' bg={colourTheme.color.name} px='20px'  margin="8px">
+                        <Text color={'background'}  >{item.type.name}</Text>
+                    </Box>
                 )})}
                 </Box>
              
@@ -88,20 +91,13 @@ export const PokemonProfile = ({navigation, route}) => {
             <Box flexDirection="row" borderBottomColor='black' borderBottomRadius='1px' paddingY='15px'>
               <Box flex={1} p={1} bg={isActive===0? colourTheme.color.name:'background'}><Center><Pressable onPress={()=>setIsActive(0)}><Text color={isActive===0? 'background':colourTheme.color.name}>Stats</Text></Pressable></Center></Box>
               <Box flex={1} p={1} bg={isActive===1? colourTheme.color.name:'background'}><Center><Pressable onPress={()=>setIsActive(1)}><Text color={isActive===1? 'background':colourTheme.color.name}>Evolutions </Text></Pressable></Center></Box>
-              <Box flex={1} p={1} bg={isActive===2? colourTheme.color.name:'background'}><Center><Pressable onPress={()=>setIsActive(2)}><Text color={isActive===2? 'background':colourTheme.color.name}>Moves</Text></Pressable></Center></Box>
+              <Box flex={1} p={1} bg={isActive===2? colourTheme.color.name:'background'}><Center><Pressable onPress={()=>setIsActive(2)} testID='Moves'><Text color={isActive===2? 'background':colourTheme.color.name}>Moves</Text></Pressable></Center></Box>
             </Box>
-            <Box flexDirection="row" paddingY="5px">
-              <Text paddingLeft="5px">Pokemon Details</Text> <Text>Pokemon Value</Text>
-            </Box>
-            <Box flexDirection="row" paddingY="5px">
-              <Text paddingLeft="5px" >Pokemon Details</Text> <Text>Pokemon Value</Text>
-            </Box>
-            <Box flexDirection="row" paddingY="5px">
-              <Text paddingLeft="5px" >Pokemon Details</Text> <Text>Pokemon Value</Text>
-            </Box>
-            <Box flexDirection="row" paddingY="5px">
-              <Text paddingLeft="5px" >Pokemon Details</Text> <Text>Pokemon Value</Text>
-            </Box>
+
+          {(isActive === 0) ? <Stats /> : <></>}
+          {(isActive === 1) ? <Evolutions /> : <></>}
+          {(isActive === 2) ? <Moves /> : <></>}
+
 
           </Box>
       </Box>
